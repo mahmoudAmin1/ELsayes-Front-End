@@ -1,0 +1,10 @@
+a.logo {
+    float: left;
+    min-width: 165px;
+}
+
+a.logo img {
+    margin: 10px 0px 10px 5px;
+    max-width: 200px;
+    max-height: 100px;
+}

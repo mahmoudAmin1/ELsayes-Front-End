@@ -1,0 +1,31 @@
+.profile-image{
+    position: relative;
+    height: 64px;
+    margin: auto 5px;
+    box-sizing: border-box;
+    border-right: 1px solid rgb(128, 128, 128,0.2);
+    text-decoration: none;
+    display: inline-block;
+}
+.login-user .profile-image img {
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 48px;
+    margin-right:5px ;
+
+}
+.login-user{
+    float: right;
+    right: 0;
+}
+.profile-name{
+    margin-right:5px ;
+    text-decoration: none;
+}
+.logState{
+   
+    right: 0;
+    text-decoration: none;
+}
