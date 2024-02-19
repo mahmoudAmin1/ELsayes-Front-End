@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import "../css/Details.css";
 function Details(props) {
   const users_api = props.link;
   const [user, setUser] = useState([]);
@@ -21,8 +22,8 @@ function Details(props) {
   const Data = () => {
     return (
       <Form
-        className="text-center m-auto pt-5 border border-3 border-danger rounded border-opacity-50"
-        style={{ width: "50%" }}
+        className="text-center mx-auto pt-5 border border-3 border-danger rounded border-opacity-30"
+        style={{ width: "50%", marginTop: "1%" }}
       >
         {entries.map(([key, val]) => {
           return (
@@ -30,13 +31,14 @@ function Details(props) {
               as={Row}
               controlId={`formPlaintext${key}`}
               key={key}
-              className="m-auto"
+              className="m-auto border-bottom border-opacity-30"
               xs="auto"
+              style={{ width: "100%" }}
             >
-              <Col>
+              <Col className="col">
                 <Form.Label column>{key} :</Form.Label>
               </Col>
-              <Col>
+              <Col className="col m-0">
                 <Form.Control plaintext readOnly defaultValue={val} />
               </Col>
             </Form.Group>
