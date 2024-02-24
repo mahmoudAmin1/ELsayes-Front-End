@@ -8,7 +8,7 @@ import Profile from "./Pages/Profile";
 import Update from "./manager/Update";
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ELsayes-Front-End",
     element: <MyLayout children={<Home />} />,
   },
   {

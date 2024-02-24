@@ -3,7 +3,7 @@ import LogoBrand from "../images/logo.png";
 function Logo() {
   return (
     <div className="logo-block">
-      <a href="/" className="logo">
+      <a href="/ELsayes-Front-End" className="logo">
         <img src={LogoBrand} alt="Elite Admin Dashboard" />
       </a>
     </div>

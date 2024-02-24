@@ -28,7 +28,7 @@ function Login() {
             variant="primary"
             type="submit"
             className="w-100"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/ELsayes-Front-End")}
           >
             Login
           </Button>
