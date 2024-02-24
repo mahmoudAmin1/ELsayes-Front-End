@@ -17,6 +17,12 @@ function Details(props) {
   if (user.length === 0) {
     return <h1> loading </h1>;
   }
+  const Delete = () => {
+    fetch(users_api, { method: "DELETE" }).then((res) => {
+      res.json();
+      console.log(res.status);
+    });
+  };
 
   let entries = Object.entries(user);
   const Data = () => {
@@ -44,7 +50,11 @@ function Details(props) {
             </Form.Group>
           );
         })}
-        <Button className="mx-auto p-2 my-5" variant="outline-danger">
+        <Button
+          className="mx-auto p-2 my-5"
+          variant="outline-danger"
+          onClick={() => Delete()}
+        >
           Delete
         </Button>
       </Form>

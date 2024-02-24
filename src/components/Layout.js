@@ -1,8 +1,12 @@
 import React from "react";
 import {
   AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
+  UserOutlined,
+  GiftOutlined,
+  FolderViewOutlined,
+  UserAddOutlined,
+  AppstoreAddOutlined,
+  FileAddOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
@@ -21,26 +25,20 @@ function getItem(label, key, icon, children, type) {
   };
 }
 const items = [
-  getItem("Workers", "sub1", <MailOutlined />, [
-    getItem("Show Workers", "Show/Workers"),
-    getItem("Update Worker", "Update/Worker"),
-    getItem("Delete Worker", "Delete/Worker"),
-    getItem("Add Worker", "4"),
+  getItem("Workers", "sub1", <UserOutlined />, [
+    getItem("Show Workers", "Show/Workers", <FolderViewOutlined />),
+    getItem("Add Worker", "Add/Worker", <UserAddOutlined />),
   ]),
   getItem("Services", "sub2", <AppstoreOutlined />, [
-    getItem("Show Services", "Show/Services"),
-    getItem("Update Service", "Update/Service"),
-    getItem("Delete Service", "Delete/Service"),
-    getItem("Add Service", "Add/Service"),
+    getItem("Show Services", "Show/Services", <FolderViewOutlined />),
+    getItem("Add Service", "Add/Service", <AppstoreAddOutlined />),
   ]),
-  getItem("Offers", "sub4", <SettingOutlined />, [
-    getItem("Show Offers", "Show/Offers"),
-    getItem("Update Offer", "Update/Offers"),
-    getItem("Delete Offer", "Delete/Offers"),
-    getItem("Add Offer", "Add/Offers"),
+  getItem("Offers", "sub4", <GiftOutlined />, [
+    getItem("Show Offers", "Show/Offers", <FolderViewOutlined />),
+    getItem("Add Offer", "Add/Offers", <FileAddOutlined />),
   ]),
-  getItem("View Cars", "Show/Cars"),
-  getItem("View Total Profit", "Show/Total-Profit"),
+  getItem("View Cars", "Show/Cars", <FolderViewOutlined />),
+  getItem("View Total Profit", "Show/Total-Profit", <FolderViewOutlined />),
 ];
 const MyLayout = ({ children }) => {
   const navigate = useNavigate();

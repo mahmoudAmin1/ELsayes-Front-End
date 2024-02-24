@@ -1,7 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 import "../css/Login.css";
 function Login() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg"></div>
@@ -22,7 +24,12 @@ function Login() {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Form.Group className="m-auto" controlId="formBasicButton">
-          <Button variant="primary" type="submit" className="w-100">
+          <Button
+            variant="primary"
+            type="submit"
+            className="w-100"
+            onClick={() => navigate("/")}
+          >
             Login
           </Button>
         </Form.Group>

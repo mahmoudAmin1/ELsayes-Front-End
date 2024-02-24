@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "../css/Table.css";
+import { useNavigate } from "react-router-dom";
 function Table(props) {
+  const navigate = useNavigate();
   const users_api = props.link;
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -25,6 +27,20 @@ function Table(props) {
           {Object.keys(users[0]).map((v) => {
             return <td key={data[v]}>{data[v]}</td>;
           })}
+          <td>
+            <button
+              className="btn btn-sm btn-danger"
+              onClick={() => navigate(`/Delete/${data.id}`)}
+            >
+              Delete
+            </button>
+            <button
+              className="btn btn-sm btn-primary"
+              onClick={() => navigate(`/Update/${data.id}`)}
+            >
+              Edit
+            </button>
+          </td>
         </tr>
       );
     });
