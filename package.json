@@ -1,4 +1,5 @@
 {
+  "homepage":"http://mahmoudAmin1.github.io/ELsayes-Front-End/",
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
@@ -29,7 +30,6 @@
     "eject": "react-scripts eject",
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build",
-    "homepage":"http://mahmoudAmin1.github.io/ELsayes-Front-End"
   },
   "eslintConfig": {
     "extends": [
