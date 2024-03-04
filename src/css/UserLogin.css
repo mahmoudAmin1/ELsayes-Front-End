@@ -6,6 +6,10 @@
     border-right: 1px solid rgb(128, 128, 128,0.2);
     text-decoration: none;
     display: inline-block;
+    color: white;
+}
+.profile-image:hover{
+    color: aqua;
 }
 .login-user .profile-image img {
     width: 48px;
@@ -14,18 +18,14 @@
     -moz-border-radius: 50px;
     border-radius: 48px;
     margin-right:5px ;
-
+    border: 1px solid white;
 }
 .login-user{
     float: right;
     right: 0;
+    /* text-align: center; */
 }
 .profile-name{
     margin-right:5px ;
-    text-decoration: none;
-}
-.logState{
-   
-    right: 0;
     text-decoration: none;
 }

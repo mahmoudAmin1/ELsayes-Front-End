@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../css/Table.css";
 import { useNavigate } from "react-router-dom";
+import { Oval } from "react-loader-spinner";
 function Table(props) {
   const navigate = useNavigate();
   const users_api = props.link;
@@ -15,11 +16,15 @@ function Table(props) {
     delete v.name;
   });
   const ThData = () => {
-    return Object.keys(users[0]).map((data) => {
-      return <th key={data}>{data}</th>;
-    });
+    return (
+      <>
+        {Object.keys(users[0]).map((data) => (
+          <th key={data}>{data}</th>
+        ))}
+        <th key="operations">Operations</th>
+      </>
+    );
   };
-
   const tdData = () => {
     return users.map((data) => {
       return (
@@ -34,11 +39,12 @@ function Table(props) {
             >
               Delete
             </button>
+            {`  |  `}
             <button
               className="btn btn-sm btn-primary"
               onClick={() => navigate(`/Update/${data.id}`)}
             >
-              Edit
+              Update
             </button>
           </td>
         </tr>
@@ -46,7 +52,17 @@ function Table(props) {
     });
   };
   if (users.length === 0) {
-    return <h1> loading </h1>;
+    return (
+      <Oval
+        visible={true}
+        height="200"
+        width="200"
+        color="blue"
+        secondaryColor="#2778c4"
+        ariaLabel="oval-loading"
+        wrapperClass="spinner"
+      />
+    );
   }
   return (
     <>

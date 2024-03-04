@@ -4,21 +4,47 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import "../css/Details.css";
+import Swal from "sweetalert2";
+import { Oval } from "react-loader-spinner";
 function Details(props) {
-  const users_api = props.link;
+  const Sureness = () => {
+    Swal.fire({
+      title: `Are You Sure You Want To Delete ${user_api.name}`,
+      showDenyButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Delete();
+        Swal.fire("Deleted Successfully!", "", "success");
+      }
+    });
+  };
+
+  const user_api = props.link;
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch(users_api)
+    fetch(user_api)
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, []);
   delete user.address;
   delete user.name;
   if (user.length === 0) {
-    return <h1> loading </h1>;
+    return (
+      <Oval
+        visible={true}
+        height="200"
+        width="200"
+        color="blue"
+        secondaryColor="#2778c4"
+        ariaLabel="oval-loading"
+        wrapperClass="spinner"
+      />
+    );
   }
   const Delete = () => {
-    fetch(users_api, { method: "DELETE" }).then((res) => {
+    fetch(user_api, { method: "DELETE" }).then((res) => {
       res.json();
       console.log(res.status);
     });
@@ -53,7 +79,7 @@ function Details(props) {
         <Button
           className="mx-auto p-2 my-5"
           variant="outline-danger"
-          onClick={() => Delete()}
+          onClick={() => Sureness()}
         >
           Delete
         </Button>

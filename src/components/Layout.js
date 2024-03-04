@@ -42,9 +42,12 @@ const items = [
 ];
 const MyLayout = ({ children }) => {
   const navigate = useNavigate();
+
   const [collapsed, setCollapsed] = useState(false);
   let current = window.location.pathname.slice(1);
+  let superKey;
   const onClick = (e) => {
+    superKey = e.keyPath[1];
     navigate(`/${e.key}`);
   };
   const {
@@ -73,9 +76,8 @@ const MyLayout = ({ children }) => {
         >
           <Menu
             onClick={onClick}
+            selectedKeys={[current]}
             mode="inline"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
             style={{
               height: "100%",
               borderRight: 0,

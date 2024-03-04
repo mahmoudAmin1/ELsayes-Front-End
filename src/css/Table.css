@@ -1,3 +1,9 @@
 .tableHigh{
     overflow-y: hidden
 }
+tr{
+    text-align: center;
+}
+.spinner svg{
+    margin:30px auto;
+}
