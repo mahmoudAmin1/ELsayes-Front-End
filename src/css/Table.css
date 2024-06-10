@@ -1,9 +1,19 @@
 .tableHigh{
     overflow-y: hidden
 }
-tr{
+thead{
     text-align: center;
+    font-size: 20px;
+}
+tbody{
+    text-align: center;
+    font-size: 15px;
+    vertical-align: middle;
 }
 .spinner svg{
     margin:30px auto;
+}
+td{
+    vertical-align: middle;
+
 }

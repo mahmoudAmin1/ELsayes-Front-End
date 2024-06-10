@@ -1,0 +1,20 @@
+.cardList {
+    margin: 20px;
+    display:flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: row; 
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  .cardList .MainCard {
+      width: 20%;
+      margin: 10px;
+      margin-bottom: 20px;
+  }
+
+  .cardList .card {
+    width: 20%;
+    margin: 10px;
+    margin-bottom: 20px;
+}

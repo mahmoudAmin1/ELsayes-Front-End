@@ -1,14 +1,29 @@
 import { Link } from "react-router-dom";
 import "../css/UserLogin.css";
+import { removeAuthUser, removeUserData, getAuthUser } from "../helper/Storage";
 function UserLogin(props) {
   return (
     <>
       <div className="login-user">
-        <Link to="/Profile" className="profile-image">
-          <img src={props.image} alt="user" id="user-image"></img>
+        <Link
+          to={`/${getAuthUser().userRole}/Profile`}
+          className="profile-image"
+        >
+          <img
+            src={`data:image/*;base64,${props.image}`}
+            alt="user"
+            id="user-image"
+          ></img>
           <span className="profile-name ">Welcome ,{props.name}</span>
         </Link>
-        <Link to="/login" className="btn btn-sm btn-danger">
+        <Link
+          to="/login"
+          className="btn btn-sm btn-danger"
+          onClick={() => {
+            removeAuthUser();
+            removeUserData();
+          }}
+        >
           Logout
         </Link>
       </div>

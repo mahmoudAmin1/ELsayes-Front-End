@@ -1,5 +1,7 @@
+import UpdateProfile from "../components/UpdateProfile";
+
 function Profile() {
-  return <h1>Profile</h1>;
+  return <UpdateProfile />;
 }
 
 export default Profile;
